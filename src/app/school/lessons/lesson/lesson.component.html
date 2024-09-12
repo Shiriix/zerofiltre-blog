@@ -30,6 +30,11 @@
                 <div class="lesson_content_wrapper p-4 lg:p-0 lg:pt-4 lg:pl-6" [ngClass]="{'lg:!pl-0':!snav.opened}" *appShellNoRender>
                     <div class="mx-auto" id="lesson_video_player">
                         <div class="vid_wrapper w-full h-full">
+                            <!-- <ngx-skeleton-loader *ngIf="loading" count="1" appearance="line" [theme]=" {'height.%': 100,
+                            'width.%': 100
+                        }"></ngx-skeleton-loader> -->
+                        <!-- <ng-container *ngIf="!loading"> -->
+                            <!-- <ng-container *ngIf="lesson.video; else noVideo"> -->
                             <ng-container *ngIf="lesson">
                                 <ng-container *ngIf="lesson.video">
                                     <iframe *ngIf="canAccessCourse || lesson.free" [src]="lesson.video | vimeoUrl" webkitallowfullscreen mozallowfullscreen 
@@ -61,7 +66,7 @@
                                         </div>
                                     </div>
                                 </ng-container>
-
+                                <!-- <ng-template #noVideo> </ng-template> -->
                                 <ng-container *ngIf="!lesson?.video">
                                     <div class="text-base lg:text-xl text-skin-base h-full flex items-center justify-center bg-skin-link">
                                         <div>
